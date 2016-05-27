@@ -1,0 +1,8 @@
+﻿<presentation:ScreenSaverWindow x:Class="WpfDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:presentation="clr-namespace:ScreenSaving.Presentation;assembly=ScreenSaving"
+        xmlns:wpfDemo="clr-namespace:WpfDemo"
+        Title="MainWindow" Background="Black" Foreground="#FF00FF17" WindowStyle="None">
+    <wpfDemo:DrawingCanvas x:Name="MyDrawingCanvas" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"/>
+</presentation:ScreenSaverWindow>

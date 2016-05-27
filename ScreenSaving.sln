@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenSaving", "ScreenSaving\ScreenSaving.csproj", "{806D61BD-276A-4833-98A2-4AF12A38C9E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsDemo", "WinFormsDemo\WinFormsDemo.csproj", "{4A7E2166-CD70-49D3-AC02-6C1DBE5E5493}"
+	ProjectSection(ProjectDependencies) = postProject
+		{806D61BD-276A-4833-98A2-4AF12A38C9E7} = {806D61BD-276A-4833-98A2-4AF12A38C9E7}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDemo", "WpfDemo\WpfDemo.csproj", "{C7F6B5A5-D6B7-466F-83C7-44D949547E19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		DebugActivity|Any CPU = DebugActivity|Any CPU
+		DebugConfig|Any CPU = DebugConfig|Any CPU
+		DebugPreview|Any CPU = DebugPreview|Any CPU
+		DebugSaver|Any CPU = DebugSaver|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{806D61BD-276A-4833-98A2-4AF12A38C9E7}.DebugActivity|Any CPU.ActiveCfg = Debug|Any CPU
+		{806D61BD-276A-4833-98A2-4AF12A38C9E7}.DebugActivity|Any CPU.Build.0 = Debug|Any CPU
+		{806D61BD-276A-4833-98A2-4AF12A38C9E7}.DebugConfig|Any CPU.ActiveCfg = Debug|Any CPU
+		{806D61BD-276A-4833-98A2-4AF12A38C9E7}.DebugConfig|Any CPU.Build.0 = Debug|Any CPU
+		{806D61BD-276A-4833-98A2-4AF12A38C9E7}.DebugPreview|Any CPU.ActiveCfg = Debug|Any CPU
+		{806D61BD-276A-4833-98A2-4AF12A38C9E7}.DebugPreview|Any CPU.Build.0 = Debug|Any CPU
+		{806D61BD-276A-4833-98A2-4AF12A38C9E7}.DebugSaver|Any CPU.ActiveCfg = Debug|Any CPU
+		{806D61BD-276A-4833-98A2-4AF12A38C9E7}.DebugSaver|Any CPU.Build.0 = Debug|Any CPU
+		{806D61BD-276A-4833-98A2-4AF12A38C9E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{806D61BD-276A-4833-98A2-4AF12A38C9E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A7E2166-CD70-49D3-AC02-6C1DBE5E5493}.DebugActivity|Any CPU.ActiveCfg = DebugActivity|Any CPU
+		{4A7E2166-CD70-49D3-AC02-6C1DBE5E5493}.DebugActivity|Any CPU.Build.0 = DebugActivity|Any CPU
+		{4A7E2166-CD70-49D3-AC02-6C1DBE5E5493}.DebugConfig|Any CPU.ActiveCfg = DebugConfig|Any CPU
+		{4A7E2166-CD70-49D3-AC02-6C1DBE5E5493}.DebugConfig|Any CPU.Build.0 = DebugConfig|Any CPU
+		{4A7E2166-CD70-49D3-AC02-6C1DBE5E5493}.DebugPreview|Any CPU.ActiveCfg = DebugPreview|Any CPU
+		{4A7E2166-CD70-49D3-AC02-6C1DBE5E5493}.DebugPreview|Any CPU.Build.0 = DebugPreview|Any CPU
+		{4A7E2166-CD70-49D3-AC02-6C1DBE5E5493}.DebugSaver|Any CPU.ActiveCfg = DebugSaver|Any CPU
+		{4A7E2166-CD70-49D3-AC02-6C1DBE5E5493}.DebugSaver|Any CPU.Build.0 = DebugSaver|Any CPU
+		{4A7E2166-CD70-49D3-AC02-6C1DBE5E5493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A7E2166-CD70-49D3-AC02-6C1DBE5E5493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7F6B5A5-D6B7-466F-83C7-44D949547E19}.DebugActivity|Any CPU.ActiveCfg = DebugConfig|Any CPU
+		{C7F6B5A5-D6B7-466F-83C7-44D949547E19}.DebugActivity|Any CPU.Build.0 = DebugConfig|Any CPU
+		{C7F6B5A5-D6B7-466F-83C7-44D949547E19}.DebugConfig|Any CPU.ActiveCfg = DebugPreview|Any CPU
+		{C7F6B5A5-D6B7-466F-83C7-44D949547E19}.DebugConfig|Any CPU.Build.0 = DebugPreview|Any CPU
+		{C7F6B5A5-D6B7-466F-83C7-44D949547E19}.DebugPreview|Any CPU.ActiveCfg = DebugPreview|Any CPU
+		{C7F6B5A5-D6B7-466F-83C7-44D949547E19}.DebugPreview|Any CPU.Build.0 = DebugPreview|Any CPU
+		{C7F6B5A5-D6B7-466F-83C7-44D949547E19}.DebugSaver|Any CPU.ActiveCfg = DebugSaver|Any CPU
+		{C7F6B5A5-D6B7-466F-83C7-44D949547E19}.DebugSaver|Any CPU.Build.0 = DebugSaver|Any CPU
+		{C7F6B5A5-D6B7-466F-83C7-44D949547E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7F6B5A5-D6B7-466F-83C7-44D949547E19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
