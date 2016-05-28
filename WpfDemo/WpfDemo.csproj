@@ -118,6 +118,12 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>REM Change the filenames here when the assembly name changes
+copy "$(TargetFileName)" "$(TargetName).scr"
+REM Unable to properly use fody cleanup funtionality, so do this....
+DEL *.dll *.xml</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
