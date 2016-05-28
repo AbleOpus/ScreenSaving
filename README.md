@@ -8,6 +8,8 @@ Screen savers are executables that have a .scr extension. Screen saver files hav
 - Configure: Opens up a configuration for the screen saver (if the screen saver has one).
 - Install: Sets the screen saver as the one to use for the current user. If the screen saver file is moved or deleted after installing it, the active screen saver will be set to none. If the screen saver has not been explicitly set to anything else and the file appears back in its original position, the active screen saver will be, once again, set to what was recently installed.
 
+![.scr Context Menu](http://i.imgur.com/8ZX4YUj.png)
+
 A screen saver can also be installed by dropping it in the system root, SysWOW64 directory, or the System32 directory. Example:
 
 - C:\Windows\MyScreenSaver.scr
@@ -19,6 +21,9 @@ Note: 3rd Party screen savers often cannot run from System32 directory for some 
 When Windows uses a screen saver, it passes in command line switches to specify an execution mode.
 - /C (Configuration mode). Specifies the application should show settings for the screen saver.
 - /P (Preview mode). Specifies that the screen saver will be shown in the tiny preview window of the screen saver settings dialog. It also specifies that the second command line argument is a handle to the preview window. An actual Windows 10 argument: "/p|3084060" (Quotes not included).
+
+![Screen saver settings dialog](http://i.imgur.com/zWC43s0.png)
+
 - /S (Screen saver mode). Specifies that the screen saver will be shown normally. This includes when the screen saver is shown when the user click the “Preview” button in the screen saver settings dialog.
 - No Arguments. Use screen saver mode. (This is how the out-of-box Windows screen savers behave).
 
@@ -146,7 +151,12 @@ The solution has many configurations. All debug configurations output to the deb
 - DebugScreenSaver: Starts the application in screen saver mode (/s).
 - DebugConfig: Starts the application in configuration mode (/c).
 - DebugPreview: Starts the application in preview mode (/p). The preview will be shown in a test window just like it is shown in the Windows screen saver settings dialog.
+
+![Activity Test Form](http://i.imgur.com/2eOGmgo.png)
+
 - DebugActivity: Starts a Form for testing mouse move threshold values (how far the mouse has to move in 1 second to register as activity). This mode is specific to the WinFormsDemo and will likely never be implemented in WPF.
+
+![Activity Test Form](http://i.imgur.com/9Z4ij3M.png)
 
 Any Form that is derived from ScreenSaverForm will have its TopMost value automatically set to false while in debug mode, otherwise it will be set to true.
 
