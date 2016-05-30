@@ -18,7 +18,7 @@ namespace ScreenSaving
     /// <typeparam name="T">The type which implements this class and is to be used as a singleton.</typeparam>
     [Serializable]
     public abstract class SettingsBase<T> where T : SettingsBase<T>, new()
-    {
+    { 
         /// <summary>
         /// Gets the only instance of this class.
         /// </summary>
