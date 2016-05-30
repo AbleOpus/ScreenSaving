@@ -34,6 +34,8 @@ namespace ScreenSaving.ScreenSavers
             if (arguments.Length == 0)
             {
                 ScreenSaverMode = ScreenSaverMode.ScreenSaver;
+                OnShowScreenSaver(Display.GetBounds());
+                return;
             }
 
             string firstArgument = arguments[0].ToLower().Trim();
