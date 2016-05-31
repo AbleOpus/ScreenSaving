@@ -30,11 +30,11 @@ namespace ScreenSaving.ScreenSavers
         /// <exception cref="ArgumentException"></exception>
         public void Initialize(string[] arguments)
         {
-            // No arguments specified, treat like /s.
+            // No arguments specified, treat like /c.
             if (arguments.Length == 0)
             {
-                ScreenSaverMode = ScreenSaverMode.ScreenSaver;
-                OnShowScreenSaver(Display.GetBounds());
+                ScreenSaverMode = ScreenSaverMode.Configure;
+                OnShowConfiguration();
                 return;
             }
 
