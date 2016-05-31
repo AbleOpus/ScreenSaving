@@ -24,8 +24,8 @@ When Windows uses a screen saver, it passes in command line switches to specify 
 
 ![Screen saver settings dialog](http://i.imgur.com/zWC43s0.png)
 
-- /S (Screen saver mode). Specifies that the screen saver will be shown normally. This includes when the screen saver is shown when the user click the “Preview” button in the screen saver settings dialog.
-- No Arguments. Use screen saver mode. (This is how the out-of-box Windows screen savers behave).
+- /S (Screen saver mode). Specifies that the screen saver will be shown normally. This includes when the screen saver is shown when the user click the “Preview” button in the screen saver settings dialog. This argument is automatically passed into the executable when a .scr file is double-clicked.
+- No Arguments. Use configuration mode. No arguments are passed into the screen saver when the "Configure" context menu item is clicked (for some odd reason).
 
 ## Express WinForms Implementation
 
