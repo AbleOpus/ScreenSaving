@@ -1,7 +1,7 @@
 # ScreenSaving
 Provides functionality for developing and testing Windows screen savers.
 
-##Screen Saver Basics
+## Screen Saver Basics
 Screen savers are executables that have a .scr extension. Screen saver files have context menu options that allows one to "Test", "Configure", or "Install" it. Screen savers should span across all screens on a display and the screen saver window or windows should be top-most. Screen savers do not automatically close when input is detected, this is a feature the developer must implement.
 
 - Test: Shows the screen saver as it would appear normally. (Note: The only time a screen saver will cause the screen to lock is when it is shown by Windows).
@@ -82,7 +82,7 @@ This states that we are running a WindowsForms-based screen saver. The first typ
 
 The first line copies the output executable to the same output directory just with the .scr extension. The second line gets rid of the unneeded DLL and .XML files (assuming you are using Costura). The .exe is not needed in the release but it is not be deleted post build as it is what Visual Studio executes and attaches the debugger to. 
 
-##Using SettingsBase
+## Using SettingsBase
 
 The SettingsBase class uses a singleton much like ApplicationSettingsBase. It saves to %appdata% in a familiar way as well. A directory having the "product name" of the application is created in the roaming or local directory. Placed within that directory is .dat files, holding settings for the application. A file will exist for each major revision of the application. So version 3.0.0.0 will have different settings from 2.0.0.0.
 
