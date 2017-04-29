@@ -76,7 +76,7 @@ This states that we are running a WindowsForms-based screen saver. The first typ
 8. Install Fody.Costura. Nuget command: "Install-Package Costura.Fody". This will merge all libraries into the application assembly. This is especially important if an installer is not used to install and uninstall the screen saver.
 9. Under the screen saver project properties, under "Build Events", add the following commands into the post build commands textbox:
 
-    ``` CMD 
+    ``` dos
     REM Change the filenames here when the assembly name changes
     copy $(TargetFileName) $(TargetName).scr
     REM Unable to properly use Fody cleanup functionality, so do this....
