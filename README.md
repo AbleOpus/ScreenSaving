@@ -2,7 +2,7 @@
 Provides functionality for developing and testing Windows screen savers.
 
 ## Screen Saver Basics
-Screen savers are executables that have a .scr extension. Screen saver files have context menu options that allows one to "Test", "Configure", or "Install" it. Screen savers should span across all screens on a display and the screen saver window or windows should be top-most. Screen savers do not automatically close when input is detected, this is a feature the developer must implement.
+Screen savers should span across all screens on a display and the screen saver window or windows should be top-most, and do not automatically close when input is detected, this is a feature the developer must implement. Screen savers are executables that have a .scr extension. Screen saver files have context menu options that allows one to "Test", "Configure", or "Install" it.
 
 - Test: Shows the screen saver as it would appear normally. (Note: The only time a screen saver will cause the screen to lock is when it is shown by Windows).
 - Configure: Opens up a configuration for the screen saver (if the screen saver has one).
@@ -33,7 +33,7 @@ When Windows uses a screen saver, it passes in command line switches to specify 
 2. Derive your main Form from ScreenSaverForm. This Form will automatically fill the entire display. The drawing implementation will decide what elements are drawn on what screen (using the Screen class of course). This base implementation Form will also be set to be always on top, borderless, and its startup position will be manual so it can be placed over the display later on.
 
     ``` C#
-public partial class DebugScreenSaverForm : ScreenSaverForm
+    public partial class DebugScreenSaverForm : ScreenSaverForm
     ```
 
 3. Paint according to whether IsPreview is set to true or false. IsPreview will be set to true if the screen saver is being placed inside the official preview window in the screen saver settings dialog.
@@ -49,8 +49,9 @@ public partial class DebugScreenSaverForm : ScreenSaverForm
         else
         {
         }
-}
+    }
     ```
+    
 4. Create a settings dialog. The settings dialog must derive from Form.
 5. Using Visual Studio's built in settings will be unpredictable at best with screen savers, so use the SettingsBase class provided by the ScreenSaver library (more on this later).
 6. In the Program class, add the following using directives:
@@ -61,6 +62,7 @@ public partial class DebugScreenSaverForm : ScreenSaverForm
     ```
     
 7. Remove the Application.Run() line from the program class and add this:
+
     ``` C#
     static void Main(string[] args)
     {
@@ -69,6 +71,7 @@ public partial class DebugScreenSaverForm : ScreenSaverForm
         WinFormsScreenSaver<DebugScreenSaverForm, SettingsDialog>.Run(args);
     }
     ```
+    
 This states that we are running a WindowsForms-based screen saver. The first type parameter is the actual screen saver form type. This abstraction assumes you are covering the entire display with one Form. The second type parameter is the Form type defined for the screen saver's settings dialog. A NoSettingsForm type is provided to specify that no settings are available. Use this where SettingsDialog is in the above code to provide a simple "no settings" notification to the user when the user tries to access the settings. Finally, we pass our command line arguments into Run() and the abstraction does the rest.
 8. Install Fody.Costura. Nuget command: "Install-Package Costura.Fody". This will merge all libraries into the application assembly. This is especially important if an installer is not used to install and uninstall the screen saver.
 9. Under the screen saver project properties, under "Build Events", add the following commands into the post build commands textbox:
@@ -109,6 +112,7 @@ class Settings : SettingsBase<Settings>
 The ScreenSaving.ScreenSavers namespace provides the main abstraction for the library. For more flexibility, derive from the StandardScreenSaver class (in opposed to using the WPF or WinForms abstractions). The StandardScreenSaver class provides built-in functionality for detecting global input and will hide the cursor when the screen saver is shown. The protected member ActivityDetector, has a property to set how sensitive the screen saver is to mouse movements. If this value is set to 100, then the mouse must move a 100 pixel distance in less than 1 second for the OnActivityDetected method to raise.
 
 Implement the OnShowScreenSaver method. Herein, the screen saver is to be shown normally. The following code sets the bounds of a globally declared Form. The bounds are set to the provided display bounds (which entails all of the screens). The code then shows the Form with Application.Run().
+
 ``` C#
 protected override void OnShowScreenSaver(Rectangle displayBounds)
 {
@@ -117,7 +121,9 @@ protected override void OnShowScreenSaver(Rectangle displayBounds)
     Application.Run(formScreenSaver);
 }
 ```
+
 Implement the OnShowConfiguration method. The following code shows a user-defined settings Form:
+
 ``` C#
 protected override void OnShowConfiguration()
 {
@@ -127,7 +133,9 @@ protected override void OnShowConfiguration()
     }
 }
 ```
+
 Implement the OnShowPreview method. This method is provides the preview window, so one can easily show the screen saver in it. Simple assign your screen saver window’s handle to the handle of the preview window. Then show the screen saver window.
+
 ``` C#
 protected override void OnShowPreview(PreviewWindow previewWindow)
 {
@@ -135,6 +143,7 @@ protected override void OnShowPreview(PreviewWindow previewWindow)
     Application.Run(formScreenSaver);
 } 
 ```
+
 Implement the OnActivityDetected method. Typically you would close the screen saver immediately, however, it is possible to start a fade out animation here, then close the application when the fade is completed. Be sure to call Dispose() when done with the screen saver. This is important considering the StandardScreenSaver installs global hooks which need to be unhooked as soon as possible.
 
 ``` C#
