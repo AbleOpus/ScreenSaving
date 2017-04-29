@@ -82,7 +82,7 @@ This states that we are running a WindowsForms-based screen saver. The first typ
     REM Unable to properly use Fody cleanup functionality, so do this....
     DEL *.dll *.xml
     ```
-
+    
 The first line copies the output executable to the same output directory just with the .scr extension. The second line gets rid of the unneeded DLL and .XML files (assuming you are using Costura). The .exe is not needed in the release but it is not be deleted post build as it is what Visual Studio executes and attaches the debugger to. 
 
 ## Using SettingsBase
