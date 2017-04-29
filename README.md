@@ -72,7 +72,8 @@ When Windows uses a screen saver, it passes in command line switches to specify 
     }
     ```
     
-This states that we are running a WindowsForms-based screen saver. The first type parameter is the actual screen saver form type. This abstraction assumes you are covering the entire display with one Form. The second type parameter is the Form type defined for the screen saver's settings dialog. A NoSettingsForm type is provided to specify that no settings are available. Use this where SettingsDialog is in the above code to provide a simple "no settings" notification to the user when the user tries to access the settings. Finally, we pass our command line arguments into Run() and the abstraction does the rest.
+    This states that we are running a WindowsForms-based screen saver. The first type parameter is the actual screen saver form type. This abstraction assumes you are covering the entire display with one Form. The second type parameter is the Form type defined for the screen saver's settings dialog. A NoSettingsForm type is provided to specify that no settings are available. Use this where SettingsDialog is in the above code to provide a simple "no settings" notification to the user when the user tries to access the settings. Finally, we pass our command line arguments into Run() and the abstraction does the rest.
+
 8. Install Fody.Costura. Nuget command: "Install-Package Costura.Fody". This will merge all libraries into the application assembly. This is especially important if an installer is not used to install and uninstall the screen saver.
 9. Under the screen saver project properties, under "Build Events", add the following commands into the post build commands textbox:
 
@@ -82,7 +83,7 @@ This states that we are running a WindowsForms-based screen saver. The first typ
     REM Unable to properly use Fody cleanup functionality, so do this....
     DEL *.dll *.xml
     ```
-    
+
 The first line copies the output executable to the same output directory just with the .scr extension. The second line gets rid of the unneeded DLL and .XML files (assuming you are using Costura). The .exe is not needed in the release but it is not be deleted post build as it is what Visual Studio executes and attaches the debugger to. 
 
 ## Using SettingsBase
